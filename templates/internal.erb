@@ -300,6 +300,11 @@
             ],
             <%- end -%>
             "properties": {
+                <%- unless nsg_id.to_s.empty? -%>
+                "networkSecurityGroup": {
+                  "id": "<%= nsg_id.to_s %>"
+                },
+                <%- end -%>
                 "ipConfigurations": [
                     {
                         "name": "ipconfig1",
